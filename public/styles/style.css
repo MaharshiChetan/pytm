@@ -1,0 +1,16 @@
+.red {
+    color: red;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+header h1 {
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    padding: 5px;
+    background: #2c0cfb;
+}

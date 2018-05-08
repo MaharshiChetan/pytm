@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/questions.ejs %>
+   <form action='/third' method="POST">
+      <label for=""><h3>Q:3 Who is the captain of Indian Cricket Team ?</h3></label>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="india_captain" id="exampleRadios1" value="Virat Kohli" checked>
+         <label class="form-check-label" for="exampleRadios1">
+            Virat Kohli
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="india_captain" id="exampleRadios2" value="Suresh Raina">
+         <label class="form-check-label" for="exampleRadios2">
+            Suresh Raina
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="india_captain" id="exampleRadios3" value="Ravinder Jadeja" >
+         <label class="form-check-label" for="exampleRadios3">
+            Ravinder Jadeja
+         </label>
+      </div>
+      <div class="form-check ">
+         <input class="form-check-input" type="radio" name="india_captain" id="exampleRadios3" value="Bhuvneshwar Kumar" >
+         <label class="form-check-label" for="exampleRadios3">
+            Bhuvneshwar Kumar
+         </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Next 3 / 4</button>
+   </form>
+<% include ../partials/footer.ejs %>

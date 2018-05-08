@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/questions.ejs %>
+   <form action='/first' method="POST">
+      <label for=""><h3>Q:1 Which one is Capital of India ?</h3></label>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="capital" id="exampleRadios1" value="Maharashtra" checked>
+         <label class="form-check-label" for="exampleRadios1">
+            Maharashtra
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="capital" id="exampleRadios2" value="Delhi">
+         <label class="form-check-label" for="exampleRadios2">
+            Delhi
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="capital" id="exampleRadios3" value="Rajasthan" >
+         <label class="form-check-label" for="exampleRadios3">
+            Rajasthan
+         </label>
+      </div>
+      <div class="form-check ">
+         <input class="form-check-input" type="radio" name="capital" id="exampleRadios3" value="Madhya Pradesh" >
+         <label class="form-check-label" for="exampleRadios3">
+            Madhya Pradesh
+         </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Next 1 / 4</button>
+   </form>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/questions.ejs %>
+   <form action='/second' method="POST">
+      <label for=""><h3>Q:2 Where is Taj Mahal ?</h3></label>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="taj" id="exampleRadios1" value="New Delhi" checked>
+         <label class="form-check-label" for="exampleRadios1">
+            New Delhi
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="taj" id="exampleRadios2" value="Karnal">
+         <label class="form-check-label" for="exampleRadios2">
+            Karnal
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="taj" id="exampleRadios3" value="Agra" >
+         <label class="form-check-label" for="exampleRadios3">
+            Agra
+         </label>
+      </div>
+      <div class="form-check ">
+         <input class="form-check-input" type="radio" name="taj" id="exampleRadios3" value="Tamil Nadu" >
+         <label class="form-check-label" for="exampleRadios3">
+            Tamil Nadu
+         </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Next 2 / 4</button>
+   </form>
+<% include ../partials/footer.ejs %>

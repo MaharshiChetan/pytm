@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/questions.ejs %>
+   <form action='/fourth' method="POST">
+      <label for=""><h3>Q:4 Who is chief minister of delhi ?</h3></label>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="chief_minister" id="exampleRadios1" value="Arvind Kejriwal" checked>
+         <label class="form-check-label" for="exampleRadios1">
+            Arvind Kejriwal
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="chief_minister" id="exampleRadios2" value="Indra Gandhi">
+         <label class="form-check-label" for="exampleRadios2">
+            Indra Gandhi
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="chief_minister" id="exampleRadios3" value="Rahul Gandhi" >
+         <label class="form-check-label" for="exampleRadios3">
+            Rahul Gandhi
+         </label>
+      </div>
+      <div class="form-check ">
+         <input class="form-check-input" type="radio" name="chief_minister" id="exampleRadios3" value="Smriti Irani" >
+         <label class="form-check-label" for="exampleRadios3">
+            Smriti Irani
+         </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Next 4 / 4</button>
+   </form>
+<% include ../partials/footer.ejs %>
