@@ -33,7 +33,6 @@ app.get('/confirm', (req, res) => {
 
 app.get('/thisissecretpage', (req, res) => {
    User.find({}, (err, users) => {
-      console.log(users);
       allUsers = users;
    });
    res.render('pages/show_user', { users: allUsers });
