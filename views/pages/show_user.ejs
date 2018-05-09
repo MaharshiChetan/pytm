@@ -13,16 +13,16 @@
             </tr>
          </thead>
          <tbody>
-            <% users.forEach((user, id) => { %>
+            <% for(var i = 0; i < Object.keys(users).length; i++) { %>
             <tr>
-               <td><%= id + 1 %></td>
-               <td><%= user.firstname %></td>
-               <td><%= user.lastname %></td>
-               <td><%= user.email %></td>
-               <td><%= user.number %></td>
-               <td><%= user.created.toGMTString() %></td>
+               <td><%= i + 1 %></td>
+               <td><%= users[i].firstname %></td>
+               <td><%= users[i].lastname %></td>
+               <td><%= users[i].email %></td>
+               <td><%= users[i].number %></td>
+               <td><%= users[i].created.toGMTString() %></td>
             </tr>
-            <% }) %>
+            <% } %>
          </tbody>
       </table>
       </div>

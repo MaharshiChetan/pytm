@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./models/users');
 
-mongoose.connect('mongodb://localhost/pytm', function (err) {
+mongoose.connect('mongodb://root:root123@ds217970.mlab.com:17970/pytm', err => {
 
    if (err) throw err;
 
@@ -29,6 +29,20 @@ app.get('/', (req, res) => {
 
 app.get('/confirm', (req, res) => {
    res.render('pages/confirm', { count: 0 });
+});
+
+app.get('/log', (req, res) => {
+   res.render('pages/login');
+});
+
+app.post('/login', (req, res) => {
+   var name = req.body.name;
+   var pass = req.body.pass;
+   if(name === "AkasH" && pass === "ChetaN") {
+      res.redirect("thisissecretpage");
+   } else {
+      res.redirect("confirm?");
+   }
 });
 
 app.get('/thisissecretpage', (req, res) => {
