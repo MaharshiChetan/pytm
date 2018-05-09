@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/confirm', (req, res) => {
-   res.render('pages/confirm', { count: 0 });
+   res.render('pages/confirm');
 });
 
 app.get('/log', (req, res) => {

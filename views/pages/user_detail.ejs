@@ -3,11 +3,6 @@
    <h2 class="font-weight-bold">Enter Your Withdrawal Details</h2>
    
    <form action='/tax' method="POST">
-      <% if(result === false) { %>
-         <div class="alert alert-danger">
-            <strong>Wrong Email!</strong> Please provide valid email address.
-         </div>
-      <% } %>
       <div class="form-group">
          <label for="firstname" class="center">First Name<strong class="red">*</strong></label>
          <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter First Name" required>
