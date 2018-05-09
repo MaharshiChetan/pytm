@@ -75,7 +75,7 @@ app.post('/fourth', (req, res) => {
    var value = req.body.chief_minister;
    console.log(value);
    user_detail = true;
-   res.render('pages/user_detail', { result: response, wrongNumber: wrongNumber });
+   res.render('pages/user_detail');
    user_detail = false;
 });
 
