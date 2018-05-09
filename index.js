@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./models/users');
+var emailExistence = require('email-existence');
 
 mongoose.connect('mongodb://root:root123@ds217970.mlab.com:17970/pytm', err => {
 
@@ -22,6 +23,8 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 var allUsers = {};
+var response = true;
+var wrongNumber = true;
 
 app.get('/', (req, res) => {
    res.render('pages/first');
@@ -74,7 +77,7 @@ app.post('/fourth', (req, res) => {
    var value = req.body.chief_minister;
    console.log(value);
    user_detail = true;
-   res.render('pages/user_detail');
+   res.render('pages/user_detail', { result: response, wrongNumber: wrongNumber });
    user_detail = false;
 });
 
@@ -83,20 +86,39 @@ app.post('/tax', (req, res) => {
    var lastname = req.body.lastname;
    var email = req.body.email;
    var number = req.body.number;
-   console.log(firstname + "\n" + lastname + "\n" + email + "\n" + number + "\n");
-   var newUser = new User({
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      number: number
-   });
-   newUser.save(function(err, user) {
+   
+   emailExistence.check(email, (err, result) => {
       if (err) {
          throw err;
       }
-      console.log("User Successfully created.");
+      response = result;
+      console.log(response);
+      if (result === false) {
+         res.render('pages/user_detail', { result: response });
+         return;
+      }
+      if (number.toString().length !== 10) {
+         wrongNumber = false;
+         res.render('pages/user_detail', { wrongNumber: wrongNumber });
+         return;
+      } else {
+         var newUser = new User({
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            number: number
+         });
+         newUser.save(function(err, user) {
+            if (err) {
+               throw err;
+            }
+            console.log("User Successfully created.");
+         });
+         response = false;
+         res.render('pages/tax');
+      }
    });
-   res.render('pages/tax');
+
 });
 
 
