@@ -23,8 +23,6 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 var allUsers = {};
-var response = true;
-var wrongNumber = true;
 
 app.get('/', (req, res) => {
    res.render('pages/first');
@@ -87,38 +85,19 @@ app.post('/tax', (req, res) => {
    var email = req.body.email;
    var number = req.body.number;
    
-   emailExistence.check(email, (err, result) => {
+   var newUser = new User({
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      number: number
+   });
+   newUser.save(function(err, user) {
       if (err) {
          throw err;
       }
-      response = result;
-      console.log(response);
-      if (result === false) {
-         res.render('pages/user_detail', { result: response });
-         return;
-      }
-      if (number.toString().length !== 10) {
-         wrongNumber = false;
-         res.render('pages/user_detail', { wrongNumber: wrongNumber });
-         return;
-      } else {
-         var newUser = new User({
-            firstname: firstname,
-            lastname: lastname,
-            email: email,
-            number: number
-         });
-         newUser.save(function(err, user) {
-            if (err) {
-               throw err;
-            }
-            console.log("User Successfully created.");
-         });
-         response = false;
-         res.render('pages/tax');
-      }
+      console.log("User Successfully created.");
    });
-
+   res.render('pages/tax');
 });
 
 
