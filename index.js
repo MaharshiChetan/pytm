@@ -31,10 +31,10 @@ app.get('/', (req, res) => {
 app.get('/confirm', (req, res) => {
    res.render('pages/confirm');
 });
-
+/* 
 app.get('/log', (req, res) => {
    res.render('pages/login');
-});
+}); */
 
 app.post('/login', (req, res) => {
    var name = req.body.name;
