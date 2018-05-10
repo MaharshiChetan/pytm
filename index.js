@@ -83,7 +83,9 @@ app.post('/tax', (req, res) => {
    var firstname = req.body.firstname;
    var lastname = req.body.lastname;
    var email = req.body.email;
-   var number = req.body.number;
+   var number = req.body.number.toString();
+   
+   console.log(typeof number);
    
    var newUser = new User({
       firstname: firstname,
