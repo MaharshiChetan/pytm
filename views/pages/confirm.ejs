@@ -1,15 +1,19 @@
 <% include ../partials/header.ejs %>
 <div class="container">
-   <div class="alert alert-success" role="alert">
-      <h4 class="alert-heading">Well done!</h4>
-      <p>Dear Customer For Withdrawal Your Reward You Need To Invite Your Friends.</p>
-      <hr>
-      <p>For Invitation Share Now On Whatsapp to 10 Different Groups / Friends for Confirm Your Withdrwal.</p>
-      <br>
-      <a type="submit" class="btn btn-primary" href="whatsapp://send?text=*jaldi se open karo isko....      Sirf 4 Question ke sahi javab dene par mil raha hai 400 paytm cash.....mere ko to mil gya hai...tum bhi try krlo*                                                   https://goo.gl/g4h4TE"
-      data-action="share/whatsapp/share">Share On Whatsapp</a>
-      <br/><br/>
-      <a class="btn btn-primary disabled" role="button" aria-disabled="false">Confirm Withdrawal</a>
-   </div>
+   <form method="GET" action="/confirm">
+      <div class="alert alert-success" role="alert">
+         <h4 class="alert-heading">Well done!</h4>
+         <p>Dear Customer For Withdrawal Your Reward You Need To Invite Your Friends.</p>
+         <hr>
+         <p>For Invitation Share Now On Whatsapp to 10 Different Groups / Friends for Confirm Your Withdrwal.</p>
+         <br>
+         <p>You shared: <%= count %></p>
+
+         <a type="submit" class="btn btn-primary" href="whatsapp://send?text=*jaldi se open karo isko....      Sirf 4 Question ke sahi javab dene par mil raha hai 400 paytm cash.....mere ko to mil gya hai...tum bhi try krlo*                                                   https://goo.gl/g4h4TE"
+         data-action="share/whatsapp/share">Share On Whatsapp</a>
+         <br/><br/>
+         <a class="btn btn-primary disabled" role="button" aria-disabled="false">Confirm Withdrawal</a>
+      </div>
+   </form>
 </div>
 <% include ../partials/footer.ejs %>

@@ -6,13 +6,6 @@ const mongoose = require('mongoose');
 const User = require('./models/users');
 var emailExistence = require('email-existence');
 
-mongoose.connect('mongodb://root:root123@ds217970.mlab.com:17970/pytm', err => {
-
-   if (err) throw err;
-
-   console.log('Successfully connected');
-
-});
 app.set('port', (process.env.PORT) || 5000);
 
 // set the view engine to ejs
@@ -23,13 +16,14 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 var allUsers = {};
+var count = 0;
 
 app.get('/', (req, res) => {
    res.render('pages/first');
 });
 
 app.get('/confirm', (req, res) => {
-   res.render('pages/confirm');
+   res.render('pages/confirm', { count: count++ });
 });
 /* 
 app.get('/log', (req, res) => {
